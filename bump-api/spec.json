@@ -1,0 +1,50 @@
+{
+	"name": "Bump",
+	"slug": "bump",
+	"version": "0.1.1",
+	"models": [
+		{
+			"name": "Note",
+			"props": [
+				{
+					"key": "noteType",
+					"type": "String",
+					"unique": false,
+					"required": true,
+          "default": "'text'"
+				},
+        {
+					"key": "createdAt",
+					"type": "Date",
+          "default": "new Date()"
+				},
+        {
+					"key": "content",
+					"type": "String",
+					"unique": false,
+					"required": true
+				},
+        {
+          "key": "tags",
+          "type": "[model]",
+          "model": "Tag"
+        }
+			]
+		},
+    {
+      "name": "Tag",
+      "props": [
+        {
+          "key": "title",
+          "type": "String",
+          "required": true
+        },
+        {
+          "key": "notes",
+          "type": "[model]",
+          "model": "Note"
+        }
+      ]
+    }
+	]
+}
