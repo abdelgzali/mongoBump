@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <img src="./assets/BUMP.png" class="logo">
     <router-view></router-view>
   </div>
 </template>
@@ -28,12 +27,5 @@ export default {
   color: #ecf0f1;
   height: 100vh;
   overflow-y: auto;
-}
-
-.logo {
-  display: block;
-  margin: auto;
-  padding-top: 60px;
-  height: 100px;
 }
 </style>

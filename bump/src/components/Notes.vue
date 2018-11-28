@@ -86,6 +86,7 @@ export default {
     }
   },
 
+  // retrieves notes via callback to server request
   methods: {
     getNotes(callback) {
       fetch('http://localhost:3000/api/Note/list', {
@@ -107,6 +108,7 @@ export default {
       const body = {
         content: this.newNotes,
       };
+      // post new note to server
       fetch('http://localhost:3000/api/Note/create', {
         method: 'POST',
         headers: {
@@ -124,13 +126,13 @@ export default {
       })
       this.newNotes = '';
       this.notesID++;
-      this.reorder();    // reorder when mounted
+      this.reorder();
     },
 
     // removes note at index
     removeNote(index) {
       this.notes.splice(index, 1);
-      this.reorder(this.notes);    // reorder when mounted
+      this.reorder(this.notes); 
     },
 
     // reorders notes based on column count
